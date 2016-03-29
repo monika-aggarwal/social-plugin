@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta>
-  <title>Share Button</title>
-  <link rel="stylesheet"  href="style/style.min.css" type="text/css" >
+    <meta>
+    <title>Share Button</title>
+    <link rel="stylesheet" href="style/style.min.css" type="text/css">
 </head>
+
 <body>
     <div class="share-bundle">
-      <div class="sharebutton animation"></div>
-      <button type="button" class="main_share_button share_button">share</button>
+        <div class="sharebutton animation"></div>
+        <button type="button" class="main_share_button share_button">share</button>
     </div>
-
-	  <script src="./external/jquery/jquery.min.js"></script>
+    <script src="./external/jquery/jquery.min.js"></script>
     <script src="./src/socialsharePlugin.min.js"></script>
     <script>
-      $(document).ready(function(){
-        $(".main_share_button").on("click",function(){
-          $('.sharebutton').toggleClass('animation');
-          $('.sharebutton').createshare();
+    $(document).ready(function() {
+        $(".main_share_button").on("click", function() {
+            $('.sharebutton').toggleClass('animation');
+            $('.sharebutton').createshare();
         })
-      });
+    });
     </script>
 </body>
+
 </html>

@@ -1,52 +1,60 @@
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-body{
-	font-size: 16px;
-	color: #444;
-	font-family: arial;
-	font-weight: normal;
-}
-.animation{
-	visibility:hidden;
-}
-.mobile_display{
-	display:none;
-}
-.hide{
-	display: none;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.sharebutton{
-	margin: 20px 0;
-	overflow: hidden;
-	padding: 0 20px;
+body {
+    font-size: 16px;
+    color: #444;
+    font-family: arial;
+    font-weight: normal;
 }
-.sharebutton span{
-	display: inline-block;
-}
-.sharebutton a{
-	float: left;
-	margin-right: 10px;
-	cursor: pointer;
 
+.animation {
+    visibility: hidden;
 }
-.socialPluginButtons a img{
-    height:30px;
-    width:30px;
+
+.mobile_display {
+    display: none;
 }
-.share-bundle{
-	position: absolute;
-    transform: translate(-50%,-50%);
+
+.hide {
+    display: none;
+}
+
+.sharebutton {
+    margin: 20px 0;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.sharebutton span {
+    display: inline-block;
+}
+
+.sharebutton a {
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.socialPluginButtons a img {
+    height: 30px;
+    width: 30px;
+}
+
+.share-bundle {
+    position: absolute;
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    background:lavender; 
+    background: lavender;
     padding-bottom: 20px;
 }
-.share_button{
-	padding: 10px;
+
+.share_button {
+    padding: 10px;
     width: 100px;
     border-radius: 4px;
     outline: none;
