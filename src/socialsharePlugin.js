@@ -1,8 +1,10 @@
 (function($) {
     var currentURL = window.location.href;
+    var fbUrl="https://connect.facebook.net/en_US/sdk.js";
     var option = {
         facebook: {
             method: 'feed',
+            appId:'',      
             name: '',
             link: currentURL,
             picture: '',
@@ -30,14 +32,17 @@
         }
     };
     var template = function() {
-        return "<span class='socialPluginButtons'>" +
-            "<a class='fb_share' ><img src='./images/fb-icon.png' ></a>" +
-            "<a class='m_share' ><img src='./images/mail+icon.png'></a>" +
-            "<a class='w_share  mobile_display ' ><img src='./images/whatsapp.png'></a>" +
-            "<a class='sms_share mobile_display' ><img src='./images/sms-icon.png'></a>" +
-            "<a class='t_share' ><img src='./images/tweet.png'></a>" +
-            "<a class='g_share'><img src='./images/gplus-icon.png'></a>" +
-            "<span>";
+        return  "<div class='share-bundle'>"+
+                "<span class='socialPluginButtons animation'>" +
+                "<a class='fb_share' ><img src='./images/fb-icon.png' ></a>" +
+                "<a class='m_share' ><img src='./images/mail+icon.png'></a>" +
+                "<a class='w_share  mobile_display ' ><img src='./images/whatsapp.png'></a>" +
+                "<a class='sms_share mobile_display' ><img src='./images/sms-icon.png'></a>" +
+                "<a class='t_share' ><img src='./images/tweet.png'></a>" +
+                "<a class='g_share'><img src='./images/gplus-icon.png'></a>" +
+                "</span>"+
+                "<button type='button' class='main_share_button share_button'>share</button>" +
+                "</div>";
     };
     var addRemove = function(platform) {
         switch (platform) {
@@ -82,6 +87,10 @@
     $('.sharebutton').append(template());
     $.fn.createshare = function(config) {
         extend(option, config);
+        $('.main_share_button').on("click",function(){
+            $('.socialPluginButtons').toggleClass('animation');
+        });
+
         $(this).find('.g_share').click(function() {
             window.open("https://plus.google.com/share?url={" + option.googleplus.url + "}");
         });
@@ -141,7 +150,7 @@
     };
     window.fbAsyncInit = function() {
         FB.init({
-            appId: '983371245066475', //needs to be replaced by your facebook appId.
+            appId: option.facebook.appId, 
             xfbml: true,
             version: 'v2.5'
         });

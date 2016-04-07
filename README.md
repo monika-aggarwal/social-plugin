@@ -12,73 +12,66 @@ All major social networks have their own share widgets you can put on your page,
 
 Let's take a quick look at the alternative, using this little plugin:
 
-1. It doesn't load any iframes or extra javascript making the overall load time much faster.
-2. It looks simple and clean by default, and can be customized in any and every way.
+1. It injects the minimal javascript making the overall load time much faster.
+2. It looks simple and clean by default, and can be customized.
 3. All you have to do to use it is include the script and call `createshare` on an element. 
 4. It's tiny and compact, expanding only when the user actually wants to share something.
 
 # Getting Started
-1. [Download the latest script &  & images] and include it on your page.
-2. Make a `share-button` element and a ‘button’ element on your page
+1. Download the latest script and images and include it on your page.
+2. Make a `sharebutton`element on your page.
 3. In your javascript, call `$(‘sharebutton’).createshare()’.
 4. Pass options to the share call if you want (details below).
-5. Add your facebook AppId number in fbAsynchInit() in socialsharePlugin.js. 
 
 ```html
-<div class="share-bundle">
-    <div class="sharebutton animation"></div>
-</div>
-<button type="button" class=" main_share_button share_button ”>share</button>
+    <div class="sharebutton"></div>
 ```
 
 ```js
-$(document).ready(function(){
-        $(".main_share_button").on("click",function(){
-          $('.sharebutton').toggleClass('animation');
-          $('.sharebutton').createshare();
-        })
-      });
+    $('.sharebutton').createshare();
 ```
 
 # Customization
 ## Configuration Options
 The share button is extremely flexible. As such we provide the ability to pass an array of options for additional configuration. All configuration options are available here:
 ```js
-var option = {
+var config = {
         facebook:{
+            appId:'' , //Your registered facebook appId must be passed in it.
             name: '' , //The name of the article that you want to share.
             link: ‘’ , //the url you'd like to share to Facebook
             picture: '' , //image to be shared to Facebook 
-            caption: ‘’ ,//caption to be shared alongside your link to Facebook 
+            caption: ‘’ , //caption to be shared alongside your link to Facebook 
             description: '' , //text to be shared alongside your link to Facebook
-            message: '' ,     //message to appear when an item is shared
-            enabled: //Is true by default
+            message: '' , //message to appear when an item is shared
+            enabled: // Is true by default
         },
         googleplus:{
-            url:  ‘’ ,//the url you'd like to share to googleplus
-            enabled: //Is true by default
+            url:  ‘’ , //the url you'd like to share to googleplus
+            enabled: // Is true by default
         },
         twitter:{
-            url:  ‘’ ,//the url you'd like to share to twitter
-    	    description : '',//the text to be shared on twitter
-            enabled: //Is true by default
+            url:  ‘’ ,// the url you'd like to share to twitter
+    	    description : '', //the text to be shared on twitter
+            enabled: // Is true by default
         },  
         mail:{
-            title: ’’ ,//the subject of the email
-            description:  ‘’ ,//the body of the email  
-            enabled: //Is true by default     
+            title: ’’ , //the subject of the email
+            description:  ‘’ , //the body of the email  
+            enabled: // Is true by default     
         },
         whatsapp:{
-            url:  ‘’ ,//the url to be shared on whatsapp
-            description: ’’ ,//the text to be shared on whatsapp
-	        enabled: //Is true by default
+            url:  ‘’ , //the url to be shared on whatsapp
+            description: ’’ , //the text to be shared on whatsapp
+	        enabled: // Is true by default
         },
         sms:{
-            description: ‘’ ,//the text to be shared on sms
-            enabled: //Is true by default
+            description: ‘’ , //the text to be shared on sms
+            enabled: // Is true by default
         }
 
     };
+    $('sharebutton').createshare(config);
 ```
 Styles
 Additionally, you're able to customize the look and feel of the button and animations though CSS. 

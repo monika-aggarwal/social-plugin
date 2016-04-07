@@ -38,6 +38,9 @@ body {
     margin-right: 10px;
     cursor: pointer;
 }
+.sharebutton a:last-child{
+    margin-right: 0;
+}
 
 .socialPluginButtons a img {
     height: 30px;
@@ -50,7 +53,8 @@ body {
     top: 50%;
     left: 50%;
     background: lavender;
-    padding-bottom: 20px;
+    padding: 20px;
+    text-align: center;
 }
 
 .share_button {

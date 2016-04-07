@@ -8,19 +8,16 @@
 </head>
 
 <body>
-    <div class="share-bundle">
-        <div class="sharebutton animation"></div>
-        <button type="button" class="main_share_button share_button">share</button>
-    </div>
+    <div class="sharebutton"></div>
     <script src="./external/jquery/jquery.min.js"></script>
     <script src="./src/socialsharePlugin.min.js"></script>
     <script>
-    $(document).ready(function() {
-        $(".main_share_button").on("click", function() {
-            $('.sharebutton').toggleClass('animation');
-            $('.sharebutton').createshare();
-        })
-    });
+    var config={
+        facebook:{
+            appId:'983371245066475'  //place your fb appId here
+        },
+    };
+    $('.sharebutton').createshare(config);
     </script>
 </body>
 
